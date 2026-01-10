@@ -2,7 +2,6 @@
 **/node_modules/
 
 # Ignore dist/build output in all subfolders
-**/dist/
 **/dist-ssr/
 
 # Ignore Vite cache folder wherever it appears
