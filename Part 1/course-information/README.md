@@ -1,1 +1,0 @@
-Kiitos Helsingin yliopisto
