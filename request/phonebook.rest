@@ -7,7 +7,7 @@ GET http://localhost:3001/api/persons
 
 ###
 # Get person by ID
-GET http://localhost:3001/api/persons/1
+GET http://localhost:3001/api/persons/6965287577a1cf9d12089c53
 
 ###
 # Add new person
@@ -21,4 +21,4 @@ Content-Type: application/json
 
 ###
 # Delete person
-DELETE http://localhost:3001/api/persons/2
+DELETE http://localhost:3001/api/persons/6965280220a86a8714e6367b

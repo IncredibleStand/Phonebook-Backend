@@ -27,6 +27,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Ignore all .env files anywhere
-**/.env
-**/.env.*
+# Environment variables
+.env
+.env.*
