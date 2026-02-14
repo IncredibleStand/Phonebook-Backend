@@ -12,7 +12,6 @@
 
 # Ignore MacOS and editor specific files
 .DS_Store
-.vscode/
 .idea/
 *.suo
 *.ntvs*
@@ -28,5 +27,4 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Environment variables
-.env
-.env.*
+config.bat

@@ -21,7 +21,7 @@ app.get('/api/persons', (request, response, next) => {
   .catch(error => next(error))
 })
 
-app.post('/api/persons', (request, response) => {
+app.post('/api/persons', (request, response, next) => {
   const body = request.body
 
   if (!body.name || !body.number) {
@@ -69,7 +69,8 @@ app.patch('/api/persons/:id', (request, response, next) => {
   PhoneBook.findByIdAndUpdate(
     request.params.id, 
     { number }, 
-    { new: true, runValidators: true, context: 'query' }
+    // Give me the new data, check the rules, and don't crash the unique-checker
+    { new: true, runValidators: true, context: 'query' } 
   )
     .then(updatedPerson => {
       if (updatedPerson) {
@@ -103,6 +104,9 @@ const errorHandler = (error, request, response, next) => {
   if (error.name === 'CastError') {
     return response.status(400).send({ error: 'malformatted id' })
   } 
+  else if (error.name === 'ValidationError') {
+    return response.status(400).json({ error: error.message })
+  }
 
   next(error)
 }
